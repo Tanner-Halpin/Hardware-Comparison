@@ -3,22 +3,20 @@
 #include <fstream>
 #include <string>
 
-using namespace std;
-
 #ifndef ATTRIBUTES_H
 #define ATTRIBUTES_H
 
 class Attributes
 {
 private:
-	string m_attribute, m_value;
+	std::string m_attribute, m_value;
 
 public:
-	void setAttribute(string& attribute);
-	void setvalue(string& value);
-	Attributes createAttribute(string& attribute, string& value);
+	void setAttribute(std::string& attribute);
+	void setvalue(std::string& value);
+	Attributes createAttribute(std::string& attribute, std::string& value);
 
-	friend ostream& operator<<(ostream& out, Attributes& a);
+	friend std::ostream& operator<<(std::ostream& out, Attributes& a);
 };
 
 #endif // !ATTRIBUTES_H

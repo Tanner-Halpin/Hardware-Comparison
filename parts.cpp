@@ -2,8 +2,9 @@
 #include <vector>
 #include <sstream>
 #include "parts.h"
+#include "componentparser.c"
 
-ostream& operator<<(ostream& out, Component& c)
+std::ostream& operator<<(std::ostream& out, Component& c)
 {
 	out << c.company << " " << c.type << " " << c.version << " " << c.model << "\n";
 	for (auto& i : c.attributes)
@@ -13,7 +14,7 @@ ostream& operator<<(ostream& out, Component& c)
 	return out;
 }
 
-ifstream& operator>>(ifstream& in, Component& c)
+std::ifstream& operator>>(std::ifstream& in, Component& c)
 {
 	in >> c.company >> c.type >> c.version >> c.model;
 	return in;
@@ -21,19 +22,19 @@ ifstream& operator>>(ifstream& in, Component& c)
 
 Component* Parts::CreateItem()
 {
-	vector<Component*> customPC;
+	std::vector<Component*> customPC;
 	Component* d = new Component;
 
-	string name; // To be parsed into company, type, version and model
+	std::string name; // To be parsed into company, type, version and model
 
-	cout << "\nEnter the full name of the " << partsName[count] << " component below: ";
+	std::cout << "\nEnter the full name of the " << partsName[count] << " component below: ";
 	count++;
 	
-	getline(cin, name);
-	stringstream ss(name);
-	string word;
+	std::getline(std::cin, name);
+	std::stringstream ss(name);
+	std::string word;
 	
-	string* attributesList[4]{ &d->company, &d->type, &d->version, &d->model };
+	std::string* attributesList[4]{ &d->company, &d->type, &d->version, &d->model };
 
 	int i = 0;
 	while (ss >> word)
@@ -49,12 +50,25 @@ Component* Parts::CreateItem()
 	customPC.push_back(d);
 	componentList.push_back(d);
 
-	cout << "\n" << endl;
+	std::cout << "\n" << std::endl;
 
-	cout << "Part Added:\n\n";
+	std::cout << "Part Added:\n\n";
 	for (auto& i : customPC)
 	{
-		cout << " " << *i << "Address: " << i;
+		std::cout << " " << *i << "Address: " << i;
 	}
 	return d;
+}
+
+void Parts::systemPartList()
+{
+	char a[128] = "powershell -command (Get-WmiObject Win32_Processor).Name";
+	std::cout << "CPU: ";
+	parser(a);
+	char b[128] = "powershell -command (Get-CimInstance Win32_VideoController).Name";
+	std::cout << "GPU: ";
+	parser(b);
+	char c[128] = "powershell -command (Get-WmiObject win32_baseboard).Product \" \"+\" (Get-WmiObject win32_baseboard).Manufacturer";
+	std::cout << "Motherboard: ";
+	parser(c);
 }

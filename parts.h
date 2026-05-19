@@ -4,22 +4,23 @@
 
 struct Component
 {
-	string company="", type="", version="", model="";
-	vector<Attributes> attributes;
+	std::string company="", type="", version="", model="";
+	std::vector<Attributes> attributes;
 };
 
-ostream& operator<<(ostream& out, Component& c);
-ifstream& operator>>(ifstream& in, Component& c);
+std::ostream& operator<<(std::ostream& out, Component& c);
+std::ifstream& operator>>(std::ifstream& in, Component& c);
 
 class Parts : public Attributes
 {
 protected:
-	vector<Component*> componentList;
+	std::vector<Component*> componentList;
 
 public:
 	int count = 0;
-	vector<string> partsName = { "CPU", "Graphics Card", "Storage Device", "Memory Card", "Motherboard", "Power Supply" };
+	std::vector<std::string> partsName = { "CPU", "Graphics Card", "Storage Device", "Memory Card", "Motherboard", "Power Supply" };
 	Component* CreateItem();
+	void systemPartList();
 };
 
 
