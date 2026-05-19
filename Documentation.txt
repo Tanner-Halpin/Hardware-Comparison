@@ -1,3 +1,7 @@
+Documentation: May 18, 2026:
+The console app will now display the CPU, GPU and Motherboard, pulled from Windows PowerShell commands. 
+
+
 Documentation: March 19, 2026 
 
 Added a feature which will allow part names to be reduced to just the first four words, allowing a part name entry to be as long as needed. Each of the four words are separated into 4 different categories. They will be used for a search feature (coming soon), to narrow down parts by company, type, version and the exact model. This also clears any left over characters in the cin buffer, so it does not overlap when entering the next part. 
