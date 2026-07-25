@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NewListClass</class>
+ <widget class="QDialog" name="NewListClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>New Part List</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>90</y>
+     <width>241</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="4" column="1">
+     <widget class="QLineEdit" name="memoryInput"/>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="psuLabel">
+      <property name="text">
+       <string>Power Supply:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="gpuLabel">
+      <property name="text">
+       <string>GPU:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="motherboardLabel">
+      <property name="text">
+       <string>Motherboard</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="gpuInput"/>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="storageInput"/>
+    </item>
+    <item row="5" column="1">
+     <widget class="QLineEdit" name="motherboardInput"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="memoryLabel">
+      <property name="text">
+       <string>Memory/RAM:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QLineEdit" name="psuInput"/>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="cpuLabel">
+      <property name="text">
+       <string>CPU:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="storageLabel">
+      <property name="text">
+       <string>Storage Device(s):</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="cpuInput"/>
+    </item>
+    <item row="7" column="1">
+     <widget class="QPushButton" name="okButton">
+      <property name="text">
+       <string>Create List</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>50</y>
+     <width>171</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string> New Computer Hardware List</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>50</y>
+     <width>113</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Enter List Name</string>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>okButton</sender>
+   <signal>clicked()</signal>
+   <receiver>NewListClass</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>329</x>
+     <y>309</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>169</x>
+     <y>314</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

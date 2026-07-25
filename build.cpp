@@ -9,7 +9,7 @@ bool operator==(const Component& p1, const Component& p2)
 
 std::ostream& operator<<(std::ostream& out, PC& p)
 {
-	out << p.name << "'s PC Specifications: " << "\n" << "1.) " << *(p.CPU) << "\n" << "2.) " << *(p.GPU) << "\n" << "3.) " << *(p.SSD) << "\n" << "4.) " << *(p.RAM) << "\n" << "5.) " << *(p.Motherboard) << "\n" << "6.) " << *(p.PSU) << "\n";
+	out << p.name;
 	return out;
 }
 
@@ -22,9 +22,6 @@ std::istream& operator>>(std::istream& in, PC& b)
 
 Build::Build()
 {
-	std::cout << "Components we could gather from your computer: \n";
-	systemPartList();
-	std::cout << std::endl;
 }
 
 bool Build::isBuildEqual(Component& p1, Component& p2)
@@ -51,6 +48,9 @@ void Build::addAttribute(int choice)
 
 	componentList[choice]->attributes.push_back(createAttribute(attribute, value));
 
+	// Note: For adding attributes to components;
+	// buildRoster[choice].Motherboard->attributes.push_back(createAttribute(attribute, value);
+
 	loadAllParts();
 	std::cout << "\n";
 }
@@ -76,7 +76,7 @@ void Build::loadParts()
 		std::cin >> name;
 		PC* list = new PC;
 		list->name = name;
-		
+
 		int count = 0;
 		int temp = 0;
 		if (componentList.size() > 1)
@@ -126,34 +126,28 @@ void Build::printUpload()
 	std::cout << "\n\n";
 }
 
-void Build::newPC()
+PC* Build::newPC(std::vector<std::string> names) // This will return a PC list which will allow you to add attributes to each component
 {
+	PC* build = new PC;
+
 	while (true)
 	{
-		PC* build = new PC;
-
-		std::cout << "\nEnter your name, or username: ";
-		std::getline(std::cin, m_name);
-		std::cout << m_name << "'s PC. \n";
-
 		Component** compList[6] = { &build->CPU, &build->GPU, &build->SSD, &build->RAM, &build->Motherboard, &build->PSU };
 
 		for (size_t i = 0; i < std::size(compList); i++)
 		{
-			*compList[i] = CreateItem();
+			*compList[i] = CreateItem(names[i]);
 		}
-
-		build->name = m_name;
 
 		buildRoster.push_back(*build);
 		count = 0;
 
-		printUpload();
-		startMenu();
-
 		delete build;
 		build = nullptr;
+
+		break;
 	}
+	return build;
 }
 
 Build Build::startMenu()
@@ -169,8 +163,6 @@ Build Build::startMenu()
 		{
 		case 'a':
 			loadParts(); break;
-		case 'b':
-			newPC(); break;
 		case 'c':
 			printUpload(); break;
 		case 'd':
@@ -218,3 +210,15 @@ std::vector<Component*> Build::loadAllParts()
 		}
 	}
 }
+
+std::vector<PC>& Build::get_buildRoster()
+{
+	return buildRoster;
+}
+
+std::vector<Component*>& PC::get_componentList()
+{
+	return componentList;
+}
+
+//out << p.name << "'s PC Specifications: " << "\n" << "1.) " << *(p.CPU) << "\n" << "2.) " << *(p.GPU) << "\n" << "3.) " << *(p.SSD) << "\n" << "4.) " << *(p.RAM) << "\n" << "5.) " << *(p.Motherboard) << "\n" << "6.) " << *(p.PSU) << "\n";

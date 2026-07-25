@@ -1,17 +1,20 @@
-﻿#include <iostream> 
-#include <vector>
-#include <fstream>
-#include <string>
-#include "attributes.h"
-#include "parts.h"
-#include "build.h"
+#include "hardwareanalysis.h"
+#include <QtWidgets/QApplication>
+#include <qsqldatabase.h>
+#include <qsqlquery.h>
 
-int main()
+int main(int argc, char *argv[])
 {
-	std::cout << "Welcome to SwitchMySystem -- The Computer Component Analysis\n";
-	std::cout << "When entering the name for a custom part, if the name is more then one word, separate the words by a hyphen: -\n\n";
-	Build b;
-	b.startMenu();
+    QApplication app(argc, argv);
 
-	return 0;
+    QSqlDatabase db = QSqlDatabase::addDatabase("PSQL");
+    db.setHostName("localhost");
+    db.setDatabaseName("Hardware_Analysis_DB");
+    db.setUserName("postgres");
+    db.setPassword("cPlusP025!");
+    bool ok = db.open();
+
+    HardwareAnalysis window;
+    window.show();
+    return app.exec();
 }

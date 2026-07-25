@@ -4,19 +4,20 @@
 
 bool operator==(const Component& p1, const Component& p2);
 
-struct PC
+struct PC : public Parts 
 {
 	std::string name;
 	Component* CPU = NULL; Component* GPU = NULL; Component* SSD = NULL; Component* RAM = NULL; Component* Motherboard = NULL; Component* PSU = NULL;
+	std::vector<Component*>& get_componentList();
 };
+
 std::ostream& operator<<(std::ostream& out, PC& p);
 std::istream& operator>>(std::istream& in, PC& b);
 
 class Build : public Parts
 {
 protected:
-	std::string m_name;
-	std::vector<PC> buildRoster;
+	inline static std::vector<PC> buildRoster;
 
 public:
 	Build();
@@ -24,9 +25,10 @@ public:
 	void addAttribute(int choice);
 	void loadParts();
 	void printUpload();
-	void newPC();
+	PC* newPC(std::vector<std::string> names);
 	Build startMenu();
 	std::vector<Component*> loadAllParts();
+	std::vector<PC>& get_buildRoster();
 };
 
 #endif // !BUILD_H
