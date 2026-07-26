@@ -1,0 +1,21 @@
+﻿   Qt/MSBuild: 3.5.0.0
+  Reading Qt configuration (C:/Qt/6.11.1/msvc2022_64/bin/qmake)
+   Qt: 6.11.1
+  attributes.cpp
+  build.cpp
+  hardwareanalysis.cpp
+  loadbuildlist.cpp
+  main.cpp
+  newlist.cpp
+  newlymadelist.cpp
+  parts.cpp
+C:\Users\tanne\Downloads\Hardware Analysis\Hardware Analysis\build.cpp(84,30): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\tanne\Downloads\Hardware Analysis\Hardware Analysis\build.cpp(212,1): warning C4715: 'Build::loadAllParts': not all control paths return a value
+C:\Users\tanne\Downloads\Hardware Analysis\Hardware Analysis\build.cpp(176,1): warning C4715: 'Build::startMenu': not all control paths return a value
+C:\Users\tanne\Downloads\Hardware Analysis\Hardware Analysis\build.cpp(8,1): warning C4717: 'operator==': recursive on all control paths, function will cause runtime stack overflow
+  qrc_hardwareanalysis.cpp
+  moc_hardwareanalysis.cpp
+  moc_newlymadelist.cpp
+  moc_newlist.cpp
+  moc_loadbuildlist.cpp
+  Hardware Analysis.vcxproj -> C:\Users\tanne\Downloads\Hardware Analysis\x64\Debug\Hardware Analysis.exe

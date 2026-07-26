@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Hardware Analysis", "Hardware Analysis\Hardware Analysis.vcxproj", "{13E7E509-57F0-4DC9-B3BE-78364723BC55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13E7E509-57F0-4DC9-B3BE-78364723BC55}.Debug|x64.ActiveCfg = Debug|x64
+		{13E7E509-57F0-4DC9-B3BE-78364723BC55}.Debug|x64.Build.0 = Debug|x64
+		{13E7E509-57F0-4DC9-B3BE-78364723BC55}.Release|x64.ActiveCfg = Release|x64
+		{13E7E509-57F0-4DC9-B3BE-78364723BC55}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B71A6ECA-4F31-4376-A3BA-AE27C494CA4B}
+	EndGlobalSection
+EndGlobal
