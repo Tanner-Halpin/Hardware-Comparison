@@ -5,6 +5,7 @@
 
 struct Component
 {
+	std::string fullname = "";
 	std::string company="", type="", version="", model="";
 	std::vector<Attributes> attributes;
 };

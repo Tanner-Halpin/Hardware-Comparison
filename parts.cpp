@@ -5,7 +5,7 @@
 
 std::ostream& operator<<(std::ostream& out, Component& c)
 {
-	out << c.company << " " << c.type << " " << c.version << " " << c.model << "\n";
+	out << c.fullname << std::endl;
 	for (auto& i : c.attributes)
 	{
 		out << "> " << i << "\n";
@@ -23,6 +23,8 @@ Component* Parts::CreateItem(std::string name)
 {
 	std::vector<Component*> customPC;
 	Component* d = new Component;
+
+	d->fullname = name;
 
 	count++;
 
@@ -62,3 +64,8 @@ void Parts::getProcessor(std::string command)
 
 	gathered_parts.push_back(output);
 }
+
+// //out << c.company << " " << c.type << " " << c.version << " " << c.model << "\n";
+
+// Above only showed the specifications of the name. The overload now shows the fullname of the component. 
+// The format above is meant for searching for specific parts by company(AMD, Intel, NVIDIA), the type (Ryzen, Intel Core, Xeon, Radeon), version( i7, Ryzen 8, etc), and model (i5-10600k)

@@ -15,6 +15,7 @@ HardwareAnalysis::HardwareAnalysis(QWidget *parent)
 
 	p.getProcessor("(Get-WmiObject Win32_Processor).Name");
 	p.getProcessor("(Get-CimInstance Win32_VideoController).Name");
+	p.getProcessor("(Get-CimInstance -ClassName Win32_DiskDrive).Model");
 	p.getProcessor("(Get-WmiObject win32_baseboard).Product + ' ' + (Get-WmiObject win32_baseboard).Manufacturer");
 
 	for (size_t i = 0; i < p.gathered_parts.size(); ++i) 
