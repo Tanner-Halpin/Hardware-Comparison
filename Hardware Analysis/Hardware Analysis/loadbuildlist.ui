@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>loadbuildlist</string>
+   <string>Custom Component List</string>
   </property>
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">

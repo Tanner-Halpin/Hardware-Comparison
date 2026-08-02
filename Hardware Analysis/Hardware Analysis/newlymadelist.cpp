@@ -9,11 +9,13 @@ NewlyMadeList::NewlyMadeList(QWidget *parent)
 	ui.setupUi(this);
 	PC* temp = b.newPC(names);
 
+	std::string parts[6] = { "CPU: ", "GPU: ", "Storage: ", "Memory: ", "Motherboard: ", "Power Supply: " };
+
 	for (size_t i = 0; i < names.size(); ++i)
 	{
 		std::stringstream myError;
 
-		myError << *(temp->get_componentList()[i]);
+		myError << parts[i] << " " << *(temp->get_componentList()[i]);
 		
 		QString e = QString::fromStdString(myError.str());
 

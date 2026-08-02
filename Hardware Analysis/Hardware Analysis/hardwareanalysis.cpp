@@ -18,9 +18,11 @@ HardwareAnalysis::HardwareAnalysis(QWidget *parent)
 	p.getProcessor("(Get-CimInstance -ClassName Win32_DiskDrive).Model");
 	p.getProcessor("(Get-WmiObject win32_baseboard).Product + ' ' + (Get-WmiObject win32_baseboard).Manufacturer");
 
+	QString parts[6] = { "CPU:  ", "GPU:  ", "Storage:  ", "Motherboard:  ", "Memory:  ", "Power Supply:  " };
+
 	for (size_t i = 0; i < p.gathered_parts.size(); ++i) 
 	{
-		ui.addressName->addItem(p.gathered_parts[i]);
+		ui.addressName->addItem(parts[i] + p.gathered_parts[i]);
 	}
 }
 
