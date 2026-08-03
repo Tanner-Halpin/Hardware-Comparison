@@ -42,6 +42,3 @@ void loadbuildlist::set_names(PC p)
 		name_labels[i]->setText(s);
 	}
 }
-
-// Github test comment
-// Second test comment
