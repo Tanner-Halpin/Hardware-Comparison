@@ -1,6 +1,5 @@
 #include "hardwareanalysis.h"
 #include <QtWidgets/QApplication>
-#include "QtSql/qsqldatabase.h"
 
 int main(int argc, char *argv[])
 {    
