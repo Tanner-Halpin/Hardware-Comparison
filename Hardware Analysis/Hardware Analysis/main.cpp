@@ -1,17 +1,11 @@
 #include "hardwareanalysis.h"
 #include <QtWidgets/QApplication>
 #include <QtSql/qsqldatabase.h>
+#include <qsqlquery.h>
 
 int main(int argc, char *argv[])
 {    
     QApplication app(argc, argv);
-
-    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
-    db.setHostName("(localdb)\\MSSQLLocalDB");
-    db.setDatabaseName("Tanner");
-    db.setUserName("");
-    db.setPassword("");
-    bool ok = db.open();
 
     HardwareAnalysis window;
     window.show();
@@ -20,9 +14,11 @@ int main(int argc, char *argv[])
 
 /*
     QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
-    db.setHostName("bigblue");
-    db.setDatabaseName("flightdb");
-    db.setUserName("acarlson");
-    db.setPassword("1uTbSbAs");
+    db.setHostName("(localdb)\\MSSQLLocalDB");
+    db.setDatabaseName("Tanner");
+    db.setUserName("");
+    db.setPassword("");
     bool ok = db.open();
+
+    db.isOpen();
 */

@@ -29,17 +29,14 @@
     <attribute name="title">
      <string>Processor</string>
     </attribute>
-    <widget class="QLabel" name="cpuLabel">
+    <widget class="QLineEdit" name="cpuLabel">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>20</y>
        <width>461</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
    </widget>
@@ -47,17 +44,14 @@
     <attribute name="title">
      <string>Graphics</string>
     </attribute>
-    <widget class="QLabel" name="gpuLabel">
+    <widget class="QLineEdit" name="gpuLabel">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>20</y>
        <width>461</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
    </widget>
@@ -65,17 +59,14 @@
     <attribute name="title">
      <string>Storage</string>
     </attribute>
-    <widget class="QLabel" name="storageLabel">
+    <widget class="QLineEdit" name="storageLabel">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>20</y>
        <width>461</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
    </widget>
@@ -83,17 +74,14 @@
     <attribute name="title">
      <string>RAM</string>
     </attribute>
-    <widget class="QLabel" name="ramLabel">
+    <widget class="QLineEdit" name="ramLabel">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>20</y>
        <width>461</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
    </widget>
@@ -101,17 +89,14 @@
     <attribute name="title">
      <string>Motherboard</string>
     </attribute>
-    <widget class="QLabel" name="moboLabel">
+    <widget class="QLineEdit" name="moboLabel">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>20</y>
        <width>461</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
    </widget>
@@ -119,17 +104,14 @@
     <attribute name="title">
      <string>PSU</string>
     </attribute>
-    <widget class="QLabel" name="psuLabel">
+    <widget class="QLineEdit" name="psuLabel">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>20</y>
        <width>461</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
    </widget>

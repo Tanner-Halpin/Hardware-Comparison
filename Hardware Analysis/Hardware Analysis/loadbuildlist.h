@@ -16,6 +16,9 @@ public:
 	~loadbuildlist();
 	void set_names(PC p);
 
+private slots:
+	void on_cpuLabel_clicked();
+
 private:
 	Ui::loadbuildlistClass ui;
 };

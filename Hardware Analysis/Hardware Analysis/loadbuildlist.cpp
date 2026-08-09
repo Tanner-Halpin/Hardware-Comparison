@@ -10,9 +10,9 @@ loadbuildlist::~loadbuildlist()
 {
 }
 
-void loadbuildlist::set_names(PC p) 
+void loadbuildlist::set_names(PC p) // Changed to a Q line edit to allow customizing the already made list
 {
-	std::vector<QLabel*> name_labels = 
+	std::vector<QLineEdit*> name_labels = 
 	{
 		ui.cpuLabel,
 		ui.gpuLabel,
@@ -41,4 +41,8 @@ void loadbuildlist::set_names(PC p)
 
 		name_labels[i]->setText(s);
 	}
+}
+
+void loadbuildlist::on_cpuLabel_clicked() 
+{
 }
