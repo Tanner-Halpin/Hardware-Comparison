@@ -12,7 +12,7 @@ loadbuildlist::~loadbuildlist()
 
 void loadbuildlist::set_names(PC p) // Changed to a Q line edit to allow customizing the already made list
 {
-	std::vector<QLineEdit*> name_labels = 
+	name_labels = 
 	{
 		ui.cpuLabel,
 		ui.gpuLabel,
@@ -22,7 +22,7 @@ void loadbuildlist::set_names(PC p) // Changed to a Q line edit to allow customi
 		ui.psuLabel,
 	};
 
-	std::vector<Component*> data_labels =
+	data_labels =
 	{
 		p.CPU,
 		p.GPU,
@@ -43,6 +43,12 @@ void loadbuildlist::set_names(PC p) // Changed to a Q line edit to allow customi
 	}
 }
 
-void loadbuildlist::on_cpuLabel_clicked() 
+void loadbuildlist::on_saveChanges_clicked() // Function to save changes for swapped out parts, and updates the Computer Build Roster and Component List
 {
+	for (size_t i = 0; i < 6; ++i)
+	{
+		data_labels[i]->fullname = name_labels[i]->text().toStdString();
+		name_labels[i]->setText(QString::fromStdString(data_labels[i]->fullname));
+	}
+	this->close();
 }

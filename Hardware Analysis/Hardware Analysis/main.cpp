@@ -7,18 +7,15 @@ int main(int argc, char *argv[])
 {    
     QApplication app(argc, argv);
 
+    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
+    db.setHostName("(localdb)\\MSSQLLocalDB");
+    db.setDatabaseName("Tanner");
+
+    bool ok = db.open();
+
+    db.isOpen();
+
     HardwareAnalysis window;
     window.show();
     return app.exec();
 }
-
-/*
-    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
-    db.setHostName("(localdb)\\MSSQLLocalDB");
-    db.setDatabaseName("Tanner");
-    db.setUserName("");
-    db.setPassword("");
-    bool ok = db.open();
-
-    db.isOpen();
-*/

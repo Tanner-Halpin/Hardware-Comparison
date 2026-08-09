@@ -15,9 +15,11 @@ public:
 	loadbuildlist(QWidget *parent = nullptr);
 	~loadbuildlist();
 	void set_names(PC p);
+	std::vector<QLineEdit*> name_labels;
+	std::vector<Component*> data_labels;
 
 private slots:
-	void on_cpuLabel_clicked();
+	void on_saveChanges_clicked();
 
 private:
 	Ui::loadbuildlistClass ui;
