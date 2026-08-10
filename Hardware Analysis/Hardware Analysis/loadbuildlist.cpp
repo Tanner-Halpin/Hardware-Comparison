@@ -50,5 +50,17 @@ void loadbuildlist::on_saveChanges_clicked() // Function to save changes for swa
 		data_labels[i]->fullname = name_labels[i]->text().toStdString();
 		name_labels[i]->setText(QString::fromStdString(data_labels[i]->fullname));
 	}
-	this->close();
 }
+
+// Adding attributes test: 
+
+	/*
+	Attributes a;
+	data_labels[0]->attributes.push_back(a.createAttribute("cores", "16"));
+
+	std::stringstream tst;
+	tst << *data_labels[0];
+
+	ui.label->setText(QString::fromStdString(tst.str()));
+
+	*/

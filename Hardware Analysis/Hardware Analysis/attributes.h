@@ -14,7 +14,7 @@ private:
 public:
 	void setAttribute(std::string& attribute);
 	void setvalue(std::string& value);
-	Attributes createAttribute(std::string& attribute, std::string& value);
+	Attributes createAttribute(std::string attribute, std::string value);
 
 	friend std::ostream& operator<<(std::ostream& out, Attributes& a);
 };

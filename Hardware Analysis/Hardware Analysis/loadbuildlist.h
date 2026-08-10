@@ -5,6 +5,7 @@
 #include "parts.h"
 #include "build.h"
 #include "newlymadelist.h"
+#include "hardwareanalysis.h"
 #include <sstream>
 
 class loadbuildlist : public QDialog, public Ui::loadbuildlistClass

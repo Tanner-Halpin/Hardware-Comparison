@@ -5,7 +5,7 @@
 void Attributes::setAttribute(std::string& attribute) { m_attribute = attribute; }
 void Attributes::setvalue(std::string& value) { m_value = value; }
 
-Attributes Attributes::createAttribute(std::string& attribute, std::string& value)
+Attributes Attributes::createAttribute(std::string attribute, std::string value)
 {
 	Attributes a;
 	a.setAttribute(attribute), a.setvalue(value);

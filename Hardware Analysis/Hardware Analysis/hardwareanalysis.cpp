@@ -59,6 +59,7 @@ void HardwareAnalysis::on_hardwareList_doubleClicked()
 	}
 }
 
+
 void HardwareAnalysis::on_addButton_clicked()
 {
 	NewList dialog(this);
