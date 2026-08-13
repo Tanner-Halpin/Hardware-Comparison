@@ -175,6 +175,8 @@ Build Build::startMenu()
 	}
 }
 
+// Debugging:
+
 std::vector<Component*> Build::loadAllParts()
 {
 	if (componentList.size() == 0)

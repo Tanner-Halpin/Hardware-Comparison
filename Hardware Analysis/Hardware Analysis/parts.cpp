@@ -6,10 +6,6 @@
 std::ostream& operator<<(std::ostream& out, Component& c)
 {
 	out << c.fullname << std::endl;
-	for (auto& i : c.attributes)
-	{
-		out << "> " << i << "\n";
-	}
 	return out;
 }
 
@@ -69,3 +65,14 @@ void Parts::getProcessor(std::string command)
 
 // Above only showed the specifications of the name. The overload now shows the fullname of the component. 
 // The format above is meant for searching for specific parts by company(AMD, Intel, NVIDIA), the type (Ryzen, Intel Core, Xeon, Radeon), version( i7, Ryzen 8, etc), and model (i5-10600k)
+
+QString Component::print_components()
+{
+	std::ostringstream ss;
+	for (auto& i : this->attributes)
+	{
+		ss << ">" << i << std::endl;
+	}
+	QString result = QString::fromStdString(ss.str());
+	return result;
+}

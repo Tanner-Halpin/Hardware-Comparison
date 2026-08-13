@@ -8,6 +8,7 @@ struct Component
 	std::string fullname = "";
 	std::string company="", type="", version="", model="";
 	std::vector<Attributes> attributes;
+	QString print_components();
 };
 
 std::ostream& operator<<(std::ostream& out, Component& c);

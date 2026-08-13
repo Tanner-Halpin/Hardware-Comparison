@@ -17,6 +17,8 @@ public:
 	Attributes createAttribute(std::string attribute, std::string value);
 
 	friend std::ostream& operator<<(std::ostream& out, Attributes& a);
+	friend std::istream& operator>>(std::istream& in, std::vector<Attributes>& a);
+	friend std::ostream& operator<<(std::ostream& out, std::vector<Attributes>& a);
 };
 
 #endif // !ATTRIBUTES_H

@@ -17,7 +17,9 @@ public:
 	~loadbuildlist();
 	void set_names(PC p);
 	std::vector<QLineEdit*> name_labels;
+	std::vector<QLabel*> attribute_labels;
 	std::vector<Component*> data_labels;
+	std::vector<std::vector<Attributes>> attribute_data;
 
 private slots:
 	void on_saveChanges_clicked();

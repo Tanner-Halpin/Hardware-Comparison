@@ -18,3 +18,18 @@ std::ostream& operator<<(std::ostream& out, Attributes& a)
 	out << a.m_attribute << ": " << a.m_value;
 	return out;
 }
+
+std::istream& operator>>(std::istream& in, std::vector<Attributes>& a)
+{
+	in >> a;
+	return in;
+}
+
+std::ostream& operator<<(std::ostream& out, std::vector<Attributes>& a)
+{
+	for (size_t i = 0; i < a.size(); i++)
+	{
+		out << a[i].m_attribute << ": " << a[i].m_value << std::endl;
+	}
+	return out;
+}
