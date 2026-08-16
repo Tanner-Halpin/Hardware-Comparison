@@ -32,16 +32,6 @@ void loadbuildlist::set_names(PC p) // Changed to a Q line edit to allow customi
 		p.PSU,
 	};
 
-	attribute_data =
-	{
-		p.CPU->attributes,
-		p.GPU->attributes,
-		p.RAM->attributes,
-		p.Motherboard->attributes,
-		p.SSD->attributes,
-		p.PSU->attributes
-	};
-
 	attribute_labels =
 	{
 		ui.label,
@@ -69,9 +59,17 @@ void loadbuildlist::on_saveChanges_clicked() // Function to save changes for swa
 	{
 		data_labels[i]->fullname = name_labels[i]->text().toStdString(); // Changing the parameters actual value to what is currently in the textbox
 		name_labels[i]->setText(QString::fromStdString(data_labels[i]->fullname)); // Set the textbox to the parameters actual name value. When the list is clicked on again, it will load the parameters real values	
+	
+		this->close();
 	}
 }
 
+
+/*
+	Test out SQL:
+	SQLParsing s;
+	name_labels[0]->setText(QString::fromStdString(std::to_string(s.testQuery())));
+*/
 
 /*
 	// Begin of test

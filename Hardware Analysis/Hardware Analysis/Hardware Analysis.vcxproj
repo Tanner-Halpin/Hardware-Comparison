@@ -105,6 +105,7 @@
     <ClCompile Include="newlist.cpp" />
     <ClCompile Include="newlymadelist.cpp" />
     <ClCompile Include="parts.cpp" />
+    <ClCompile Include="sqlparsing.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="hardwareanalysis.h" />
@@ -119,6 +120,7 @@
     <ClInclude Include="attributes.h" />
     <ClInclude Include="build.h" />
     <ClInclude Include="parts.h" />
+    <ClInclude Include="sqlparsing.h" />
     <QtMoc Include="newlymadelist.h" />
     <QtMoc Include="newlist.h" />
     <QtMoc Include="loadbuildlist.h" />
