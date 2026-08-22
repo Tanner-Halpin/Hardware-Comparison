@@ -22,7 +22,6 @@ protected:
 public:
 	Build();
 	bool isBuildEqual(Component& p1, Component& p2);
-	void addAttribute(int choice);
 	void loadParts();
 	void printUpload();
 	PC* newPC(std::vector<std::string> names);

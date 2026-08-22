@@ -7,14 +7,14 @@ struct Component
 {
 	std::string fullname = "";
 	std::string company="", type="", version="", model="";
-	std::vector<Attributes> attributes;
+	std::vector<Attribute> attributes;
 	QString print_components();
 };
 
 std::ostream& operator<<(std::ostream& out, Component& c);
 std::ifstream& operator>>(std::ifstream& in, Component& c);
 
-class Parts : public Attributes
+class Parts : public Attribute
 {
 protected:
 	inline static std::vector<Component*> componentList;

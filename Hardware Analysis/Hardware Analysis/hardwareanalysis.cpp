@@ -13,6 +13,8 @@ HardwareAnalysis::HardwareAnalysis(QWidget *parent)
     ui.setupUi(this);
 	Parts p;
 
+	// Below are CLI Commands that will retrieve computer information from your computer. 
+
 	p.getProcessor("(Get-WmiObject Win32_Processor).Name");
 	p.getProcessor("(Get-CimInstance Win32_VideoController).Name");
 	p.getProcessor("(Get-CimInstance -ClassName Win32_DiskDrive).Model");
@@ -43,7 +45,7 @@ void HardwareAnalysis::on_deleteButton_clicked()
 	}
 }
 
-void HardwareAnalysis::on_hardwareList_doubleClicked()
+void HardwareAnalysis::on_hardwareList_doubleClicked() // GUI element that allows you to select the Computer Build list
 {
 	loadbuildlist c(this);
 	QListWidgetItem* current = ui.hardwareList->currentItem();
@@ -60,7 +62,7 @@ void HardwareAnalysis::on_hardwareList_doubleClicked()
 }
 
 
-void HardwareAnalysis::on_addButton_clicked()
+void HardwareAnalysis::on_addButton_clicked() // After enetering in each component name, click add to create the list
 {
 	NewList dialog(this);
 	dialog.exec();
@@ -74,15 +76,16 @@ void HardwareAnalysis::on_addButton_clicked()
 		word << b.get_buildRoster()[b.get_buildRoster().size() - 1];
 		QListWidgetItem* item = new QListWidgetItem(QString::fromStdString(word.str()), ui.hardwareList);
 	}
-	status = false;
+	status = false; 
+	// The 'status' bool (created in newlymadelist.h, will prevent a list from being made when selecting 'x' on the keyboard.
 }
 
+
+
+// Test query
 /*
-std::string one = "1";
-	std::string two = "2";
-
-	Attributes d = b.get_buildRoster()[row].createAttribute(one, two);
-	Component e;
-
-	e.attributes.push_back(d);
+if (p.CPU->fullname == l.sql_parse()[0])
+{
+	p.CPU->attributes.push_back(p.createAttribute("Cores", "16");
+}
 */

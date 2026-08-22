@@ -7,7 +7,10 @@ NewlyMadeList::NewlyMadeList(QWidget *parent)
 	: QDialog(parent)
 {
 	ui.setupUi(this);
-	PC* temp = b.newPC(names);
+	PC* temp = b.newPC(names); // Create a temporary 'PC' object with the names list initialized. 
+
+	// Each 'name' in the 'temp PC object will be matched with the names of any components in the SQL database. 
+	// the components of the matching 'names' will have their attribute lists filled accordingly to what matches in the SQL database
 
 	std::string parts[6] = { "CPU: ", "GPU: ", "Storage: ", "Memory: ", "Motherboard: ", "Power Supply: " };
 

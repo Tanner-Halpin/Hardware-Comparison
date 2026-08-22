@@ -3,11 +3,12 @@
 
 #include <qsqlquery.h>
 #include "loadbuildlist.h"
+#include "build.h"
 
 class SQLParsing 
 {
 public:
-	int testQuery();
+	void CPU_Specs(PC* p);
 };
 
 #endif

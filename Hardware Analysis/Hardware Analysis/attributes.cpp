@@ -2,30 +2,30 @@
 #include <string>
 #include "attributes.h"
 
-void Attributes::setAttribute(std::string& attribute) { m_attribute = attribute; }
-void Attributes::setvalue(std::string& value) { m_value = value; }
+void Attribute::setAttribute(std::string& attribute) { m_attribute = attribute; }
+void Attribute::setvalue(std::string& value) { m_value = value; }
 
-Attributes Attributes::createAttribute(std::string attribute, std::string value)
+Attribute Attribute::createAttribute(std::string attribute, std::string value) // Create an attribute specification for a component
 {
-	Attributes a;
+	Attribute a;
 	a.setAttribute(attribute), a.setvalue(value);
 
 	return a;
 }
 
-std::ostream& operator<<(std::ostream& out, Attributes& a)
+std::ostream& operator<<(std::ostream& out, Attribute& a) // Output a an individual component attribute
 {
-	out << a.m_attribute << ": " << a.m_value;
+	out << a.m_attribute << ":  " << a.m_value;
 	return out;
 }
 
-std::istream& operator>>(std::istream& in, std::vector<Attributes>& a)
+std::istream& operator>>(std::istream& in, std::vector<Attribute>& a) // Inputting in a list of attributes
 {
 	in >> a;
 	return in;
 }
 
-std::ostream& operator<<(std::ostream& out, std::vector<Attributes>& a)
+std::ostream& operator<<(std::ostream& out, std::vector<Attribute>& a) // Output format for an an list of component attributes
 {
 	for (size_t i = 0; i < a.size(); i++)
 	{

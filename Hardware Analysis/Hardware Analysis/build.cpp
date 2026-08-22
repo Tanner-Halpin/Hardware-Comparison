@@ -1,24 +1,24 @@
 #include <iostream>
 #include <vector>
 #include "build.h"
+#include "sqlparsing.h"
 
-bool operator==(const Component& p1, const Component& p2)
+bool operator==(const Component& p1, const Component& p2) // Are two builds equal
 {
 	return p1 == p2;
 }
 
-std::ostream& operator<<(std::ostream& out, PC& p)
+std::ostream& operator<<(std::ostream& out, PC& p) // Output a Computer Build list
 {
 	out << p.name;
 	return out;
 }
 
-std::istream& operator>>(std::istream& in, PC& b)
+std::istream& operator>>(std::istream& in, PC& b) // Input format for a computer build list
 {
 	in >> b.name;
 	return in;
 }
-
 
 Build::Build()
 {
@@ -33,29 +33,7 @@ bool Build::isBuildEqual(Component& p1, Component& p2)
 	return true;
 }
 
-void Build::addAttribute(int choice)
-{
-	std::string attribute, value;
-
-	std::cin.clear();
-	std::cin.ignore(100, '\n');
-
-	std::cout << "Enter attribute name: ";
-	std::getline(std::cin, attribute);
-
-	std::cout << "The value: ";
-	std::getline(std::cin, value);
-
-	componentList[choice]->attributes.push_back(createAttribute(attribute, value));
-
-	// Note: For adding attributes to components;
-	// buildRoster[choice].Motherboard->attributes.push_back(createAttribute(attribute, value);
-
-	loadAllParts();
-	std::cout << "\n";
-}
-
-void Build::loadParts()
+void Build::loadParts() // Function for loading a text document of computer parts. Before program was converted to GUI
 {
 	std::string file, name;
 	std::cout << "Enter the exact name of the file: ";
@@ -113,7 +91,7 @@ void Build::loadParts()
 	}
 }
 
-void Build::printUpload()
+void Build::printUpload() // Old function to print the CLI build roster
 {
 	std::cout << "\n\nCurrent PC Build Roster:\n\n";
 	int count = 0;
@@ -142,6 +120,9 @@ PC* Build::newPC(std::vector<std::string> names) // This will return a PC list w
 		buildRoster.push_back(*build);
 		count = 0;
 
+		SQLParsing q;
+		q.CPU_Specs(build);
+	
 		delete build;
 		build = nullptr;
 
@@ -150,7 +131,7 @@ PC* Build::newPC(std::vector<std::string> names) // This will return a PC list w
 	return build;
 }
 
-Build Build::startMenu()
+Build Build::startMenu() // Old Build start menu. Before Program was converted to GUI. 
 {
 	char option = 0;
 	while (true && option != 'q')
@@ -203,7 +184,7 @@ std::vector<Component*> Build::loadAllParts()
 		case 'y':
 			std::cout << "Select part by number: ";
 			std::cin >> selection;
-			addAttribute(selection - 1);
+			//addAttribute(selection - 1);
 
 		case 'n':
 			return componentList;
@@ -213,14 +194,37 @@ std::vector<Component*> Build::loadAllParts()
 	}
 }
 
-std::vector<PC>& Build::get_buildRoster()
+std::vector<PC>& Build::get_buildRoster() // Get all the created computer lists
 {
 	return buildRoster;
 }
 
-std::vector<Component*>& PC::get_componentList()
+std::vector<Component*>& PC::get_componentList() // Get all the components that were added from the database to this vector. 
 {
 	return componentList;
 }
 
 //out << p.name << "'s PC Specifications: " << "\n" << "1.) " << *(p.CPU) << "\n" << "2.) " << *(p.GPU) << "\n" << "3.) " << *(p.SSD) << "\n" << "4.) " << *(p.RAM) << "\n" << "5.) " << *(p.Motherboard) << "\n" << "6.) " << *(p.PSU) << "\n";
+
+// Old function not needed anymore:
+
+/*
+void Build::addAttribute(int choice)
+{
+	std::string attribute, value;
+
+	std::cin.clear();
+	std::cin.ignore(100, '\n');
+
+	std::cout << "Enter attribute name: ";
+	std::getline(std::cin, attribute);
+
+	std::cout << "The value: ";
+	std::getline(std::cin, value);
+
+	componentList[choice]->attributes.push_back(createAttribute(attribute, value));
+
+	loadAllParts();
+	std::cout << "\n";
+}
+*/

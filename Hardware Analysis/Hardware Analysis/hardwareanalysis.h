@@ -4,6 +4,7 @@
 #include <qprocess.h>
 #include "ui_hardwareanalysis.h"
 #include "parts.h"
+#include "newlist.h"
 
 class HardwareAnalysis : public QWidget
 {

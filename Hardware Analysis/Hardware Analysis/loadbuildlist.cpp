@@ -50,34 +50,21 @@ void loadbuildlist::set_names(PC p) // Changed to a Q line edit to allow customi
 		QString s = QString::fromStdString(ss.str());
 
 		name_labels[i]->setText(s);
+		attribute_labels[i]->setText(data_labels[i]->print_components());
 	}
 }
 
-void loadbuildlist::on_saveChanges_clicked() // Function to save changes for swapped out parts, and updates the Computer Build Roster and Component List
+// Function to save changes for swapped out parts, and updates the Computer Build Roster and Component List
+void loadbuildlist::on_saveChanges_clicked() 
 {
 	for (size_t i = 0; i < 6; ++i)
 	{
-		data_labels[i]->fullname = name_labels[i]->text().toStdString(); // Changing the parameters actual value to what is currently in the textbox
-		name_labels[i]->setText(QString::fromStdString(data_labels[i]->fullname)); // Set the textbox to the parameters actual name value. When the list is clicked on again, it will load the parameters real values	
-	
+		data_labels[i]->fullname = name_labels[i]->text().toStdString(); 
+		// Changing the parameters actual value to what is currently in the textbox
+
+		name_labels[i]->setText(QString::fromStdString(data_labels[i]->fullname)); 
+		// Set the textbox to the parameters actual name value. When the list is clicked on again, it will load the parameters real values	
+
 		this->close();
 	}
 }
-
-
-/*
-	Test out SQL:
-	SQLParsing s;
-	name_labels[0]->setText(QString::fromStdString(std::to_string(s.testQuery())));
-*/
-
-/*
-	// Begin of test
-	Attributes a;
-	if (data_labels[0]->attributes.size() == 0)
-	{
-		data_labels[0]->attributes.push_back(a.createAttribute("Cores", "16"));
-	}
-	attribute_labels[0]->setText(data_labels[0]->print_components());
-	// End of test
-*/

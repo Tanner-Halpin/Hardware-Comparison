@@ -7,6 +7,7 @@
 #include "newlymadelist.h"
 #include "hardwareanalysis.h"
 #include "sqlparsing.h"
+#include "attributes.h"
 #include <sstream>
 
 class loadbuildlist : public QDialog, public Ui::loadbuildlistClass
